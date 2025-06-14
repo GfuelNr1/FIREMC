@@ -1,0 +1,191 @@
+/* --- Setări Generale --- */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Russo One', sans-serif;
+    color: #fff;
+    overflow: hidden;
+    background-color: #000;
+}
+
+/* --- Fundal Video --- */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+#background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6) saturate(1.5);
+}
+
+/* --- Container Principal --- */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding: 20px;
+    background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 80%);
+    z-index: 1;
+}
+
+/* --- Efect de Scântei (Ember) --- */
+#ember-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.ember {
+    position: absolute;
+    background-color: #ff6600;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 10px #ff6600, 0 0 20px #ff8c00, 0 0 30px #ff4500;
+    animation: floatUp 10s infinite linear;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+
+/* --- Elemente de Text și Logo --- */
+.server-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #ff4500;
+    box-shadow: 0 0 25px #ff4500;
+    margin-bottom: 20px;
+}
+
+.server-title {
+    font-size: 5rem;
+    margin: 0;
+    text-transform: uppercase;
+    color: #fff;
+    animation: fire-flicker 3s infinite alternate;
+}
+
+@keyframes fire-flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      text-shadow:
+        0 0 5px #fff,
+        0 0 15px #fff,
+        0 0 25px #ff8c00,
+        0 0 50px #ff4500,
+        0 0 80px #ff4500;
+    }
+    20%, 24%, 55% {        
+      text-shadow: none;
+    }
+}
+
+/* --- Text Rotativ (Features) --- */
+.features-rotator {
+    font-size: 1.5rem;
+    margin-top: 15px;
+    height: 30px;
+    color: #ffd700;
+    text-shadow: 0 0 5px #ffd700;
+}
+
+#feature-text {
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* --- Buton Copiere IP --- */
+#copy-btn {
+    background: linear-gradient(45deg, #ff4500, #ff8c00);
+    border: none;
+    border-radius: 10px;
+    padding: 15px 30px;
+    color: white;
+    font-family: 'Russo One', sans-serif;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s;
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.6);
+}
+
+#copy-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 140, 0, 0.8);
+}
+
+#copy-btn .copy-icon {
+    width: 20px;
+    height: 20px;
+    background: url('https://img.icons8.com/ios-glyphs/30/FFFFFF/copy.png') no-repeat center center/contain;
+    transition: background-image 0.3s;
+}
+
+/* --- Status Server --- */
+.server-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 8px 15px;
+    border-radius: 8px;
+}
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #28a745; /* Verde pentru online */
+    box-shadow: 0 0 10px #28a745;
+}
+.status-dot.offline {
+    background-color: #dc3545; /* Roșu pentru offline */
+    box-shadow: 0 0 10px #dc3545;
+}
+
+/* --- Iconițe Sociale --- */
+.social-links {
+    margin-top: 25px;
+}
+.social-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.3s;
+    filter: drop-shadow(0 0 5px #ff8c00) grayscale(50%);
+}
+.social-icon:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px #ffdd00) grayscale(0%);
+}
+.social-icon.discord { background-image: url('https://img.icons8.com/ios-filled/50/FFFFFF/discord-logo.png'); }
+.social-icon.store { background-image: url('https://img.icons8.com/ios-filled/50/FFFFFF/shopping-cart.png'); }
+.social-icon.vote { background-image: url('https://img.icons8.com/ios-filled/50/FFFFFF/checked-checkbox.png'); }
